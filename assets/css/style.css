@@ -1,14 +1,28 @@
 /************************************
-JUMBOTRON
+BODY & JUMBOTRON
 ************************************/
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    max-width: 980px;
+}
 
 .jumbotron {
     background-image: url("../images/parks-img.jpg");
     padding: 10% 0;
+    margin-bottom: 5%;
+    border-radius: 10px;
     height: 100%;
     width: 100%;
     background-size: cover;
-    color: #fff;
+}
+
+.container .jumbotron {
+    border-radius: 0;
 }
 
 /************************************
@@ -17,6 +31,12 @@ QUESTIONS AND ANSWERS STYLES
 
 h2 {
     font-size: 30px;
+}
+
+.row .content {
+    max-width: 950px;
+    text-align: center;
+    
 }
 
 .answerList .thisChoice {
@@ -42,6 +62,10 @@ ANSWER PAGE
     font-size: 20px;
 }
 
+#gif {
+    margin-top: 3%;
+}
+
 /************************************
 SCOREBOARD
 ************************************/
@@ -54,4 +78,8 @@ SCOREBOARD
 #incorrectAnswers,
 #unanswered {
     font-size: 20px;
+}
+
+#startOverBtn {
+    margin-top: 3%;
 }

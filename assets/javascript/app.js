@@ -39,8 +39,8 @@ $(document).ready(function () {
         answerList: ["Ann Perkins", "Andy Dwyer", "Leslie Knope", "Ron Swanson"],
         validAnswer: 1
     }, {
-        question: "What state is Pawnee located in?",
-        answerList: ["Missouri", "Idaho", "Indiana", "Ohio"],
+        question: "Who is the deputy Parks Director of Pawnee?",
+        answerList: ["Ron Swanson", "Tom Haverford", "Leslie Knope", "Ann Perkins"],
         validAnswer: 2
     }, {
         question: "What clothing rental company did Tom start?",
@@ -75,6 +75,9 @@ $(document).ready(function () {
         answerList: ["Candiopolis", "Sweetums", "Sugarcoat", "Choco-yum"],
         validAnswer: 1
     },];
+
+    // Only thing I could do in order to hide my "start over" button on launch/reload.
+    $("#startOverBtn").hide();
 
     // Start button on click function
     $("#startBtn").on("click", function () {
@@ -161,6 +164,22 @@ $(document).ready(function () {
         var rightAnswerText = quizQuestions[currentQuestion].answerList[quizQuestions[currentQuestion].validAnswer];
         var rightAnswerIndex = quizQuestions[currentQuestion].validAnswer;
 
+        // giphy api begin ---------------------------
+        // NOTE: Used "https://www.youtube.com/watch?v=fEYx8dQr_cQ" for help with this section.
+        // Also struggled here for awhile.
+        var giphyURL = "http://api.giphy.com/v1/gifs/search?q=parks+and+rec+" + [rightAnswerText] + "&limit=1&rating=g&api_key=dc6zaTOxFJmzC"
+        $.ajax({ url: giphyURL, method: "GET" }).done(function (giphy) {
+            var currentGif = giphy.data;
+            $.each(currentGif, function (index, value) {
+                var embedGif = value.images.original.url;
+                newGif = $("<img>");
+                newGif.attr("src", embedGif);
+                newGif.addClass("gifImg");
+                $("#gif").html(newGif);
+            });
+        });
+        // giphy api end -----------------------------
+
         // This code checks to see if questions is right, wrong, or unanswered.
         if ((userSelect == rightAnswerIndex) && (answered == true)) {
             correctAnswer++;
@@ -168,7 +187,7 @@ $(document).ready(function () {
         } else if ((userSelect != rightAnswerIndex) && (answered == true)) {
             incorrectAnswer++;
             $("#message").html(messages.incorrect);
-            $("#correctedAnswer").html("The right answer was: " + rightAnswerText);            
+            $("#correctedAnswer").html("The right answer was: " + rightAnswerText);
         } else {
             unanswered++;
             $("#message").html(messages.endTime);
@@ -185,18 +204,16 @@ $(document).ready(function () {
     }
 
     // Scoreboard function. Displays stats at the end of the game plus a Start Over button.
-    function scoreboard(){
+    function scoreboard() {
         $("#timeLeft").empty();
         $("#message").empty();
         $("#correctedAnswer").empty();
         $("#gif").empty();
-    
+
         $("#finalMessage").html(messages.finished);
         $("#correctAnswers").html("Correct Answers: " + correctAnswer);
         $("#incorrectAnswers").html("Incorrect Answers: " + incorrectAnswer);
         $("#unanswered").html("Unanswered: " + unanswered);
-        $("#startOverBtn").addClass("reset");
         $("#startOverBtn").show();
-        $("#startOverBtn").html("Start Over?");
     }
 });
