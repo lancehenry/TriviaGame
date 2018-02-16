@@ -2,18 +2,56 @@
 JUMBOTRON
 ************************************/
 
-.container .jumbotron {
-    text-align: center;
-    border-radius: 0;
+.jumbotron {
+    background-image: url("../images/parks-img.jpg");
+    padding: 10% 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    color: #fff;
 }
 
 /************************************
-ROW - 1 (SCORE, WINS, LOSSES)
+QUESTIONS AND ANSWERS STYLES
 ************************************/
 
-.row-1 {
-    margin-bottom: 40px;
-    margin-top: 40px;
-    font-size: 4em;
-    color: #333;
+h2 {
+    font-size: 30px;
+}
+
+.answerList .thisChoice {
+    font-size: 20px;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+.answerList .thisChoice:hover {
+    color: #fff;
+    background-color: #79ca00;
+}
+
+/************************************
+ANSWER PAGE
+************************************/
+
+#message {
+    font-size: 30px;
+}
+
+#correctedAnswer {
+    font-size: 20px;
+}
+
+/************************************
+SCOREBOARD
+************************************/
+
+#finalMessage {
+    font-size: 30px;
+}
+
+#correctAnswers,
+#incorrectAnswers,
+#unanswered {
+    font-size: 20px;
 }

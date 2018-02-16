@@ -30,7 +30,7 @@ $(document).ready(function () {
         correct: "You got it!",
         incorrect: "You're so wrong.",
         endTime: "You're out of time.",
-        finished: "Let's see your results."
+        finished: "Let's see how you did."
     }
 
     // Questions array
