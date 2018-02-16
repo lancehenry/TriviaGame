@@ -1,101 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!-- REQUIRED META TAGS -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parks and Rec Trivia</title>
 
-    <!-- RESET CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Reset CSS link -->
+    <link href="assets/css/reset.css" rel="stylesheet">
 
-    <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <!-- Bootstrap CDN link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- BOOTSTRAP JQUERY -->
+    <!-- My CSS styles link -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- jQuery CDN link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- BOOTSTRAP JAVASCRIPT -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-    <!-- MY CSS STYLES -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <title>Marvel Universe Trivia</title>
 </head>
 
 <body>
-    <!-- PAGE CONTENT -->
-    <div class="container">
 
-        <!-- JUMBOTRON HEADER -->
-        <header class="jumbotron">
-            <h1>Marvel Universe Trivia</h1>
-        </header>
-
-        <!-- NUMBER TO GUESS, USER POINTS, WINS, LOSSES ROW -->
-        <div class="row text-center row-1">
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <h3>Random Number</h3>
-                <span id="number-to-guess"></span>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <h3>Your Points</h3>
-                <span id="counter">0</span>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <h3>Wins</h3>
-                <span id="wins">0</span>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <h3>Losses</h3>
-                <span id="losses">0</span>
-            </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-3">Parks and Rec Trivia</h1>
+            <!--<img src='assets/images/parks-and-recreation.jpg' alt='headerImg' width='100%'>-->
         </div>
-
-        <hr>
-
-        <!-- CRYSTALS WITH RANDOM SPECIFIC VALUES EACH RELOAD -->
-        <div class="row text-center row-2">
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="thumbnail crystal-image" id="crystal-1">
-                    <img src="assets/images/crystal-1.png" alt="crystal 1">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="thumbnail crystal-image" id="crystal-2">
-                    <img src="assets/images/crystal-2.png" alt="crystal 2">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="thumbnail crystal-image" id="crystal-3">
-                    <img src="assets/images/crystal-3.png" alt="crystal 3">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="thumbnail crystal-image" id="crystal-4">
-                    <img src="assets/images/crystal-4.png" alt="crystal 4">
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
     </div>
-</body>
 
-<!-- LINKED JAVASCRIPT FILE -->
-<script src="assets/javascript/app.js"></script>
+    <!-- Main content area -->
+    <div class="container text-center">
+        <button class="btn btn-primary btn-lg" id="startBtn">Start</button>
+
+        <!-- Question page -->
+        <div id="timeLeft"></div>
+        <div id="currentQuestion"></div>
+        <div class="question"></div>
+        <div class="answerList"></div>
+
+        <!-- Answer Page -->
+        <div id="message"></div>
+        <div id="correctedAnswer"></div>
+        <div id="gif"></div>
+
+        <!-- Scoreboard -->
+        <div id="finalMessage"></div>
+        <div id="correctAnswers"></div>
+        <div id="incorrectAnswers"></div>
+        <div id="unanswered"></div>
+        <div id="startOverBtn"></div>
+    </div>
+
+    <!-- My javascript file link -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
 
 </html>
