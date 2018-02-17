@@ -165,10 +165,13 @@ $(document).ready(function () {
         var rightAnswerIndex = quizQuestions[currentQuestion].validAnswer;
 
         // giphy api begin ---------------------------
-        // NOTE: Used "https://www.youtube.com/watch?v=fEYx8dQr_cQ" for help with this section.
+        // NOTE: Used "https://www.youtube.com/watch?v=fEYx8dQr_cQ" for help with this section. Still not 100% sure what all this code does...
         // Also struggled here for awhile.
         var giphyURL = "http://api.giphy.com/v1/gifs/search?q=parks+and+rec+" + [rightAnswerText] + "&limit=1&rating=g&api_key=dc6zaTOxFJmzC"
-        $.ajax({ url: giphyURL, method: "GET" }).done(function (giphy) {
+        $.ajax({
+            url: giphyURL, 
+            method: "GET"
+        }).done(function (giphy) {
             var currentGif = giphy.data;
             $.each(currentGif, function (index, value) {
                 var embedGif = value.images.original.url;
